@@ -1,9 +1,10 @@
 import tkinter as tk
-
+# Coverter
 class Currency:
+
     def __init__(self, root):
         self.root = root
-        self.root.title("Mein Währungsrechner")
+        self.root.title("Währungsrechner")
 
         # Label
         self.label = tk.Label(root, text="Gib einen Geldbetrag ein: (in Euro)")
@@ -32,14 +33,17 @@ class Currency:
         zahl = int(self.entry.get())
         if self.button1:
             self.output_label.config(text=f"{zahl}€!")
+
     def convert_in_usd(self):
         zahl = int(self.entry.get())
         Usd= zahl * 1.17
         self.output_label.config(text=f"{Usd}$!")
+
     def convert_in_gbp(self):
         zahl = int(self.entry.get())
         Gbp = zahl * 0.86
         self.output_label.config(text=f"{Gbp}£!")
+
     def language_de(self):
         self.label.config(text="Gib einen Geldbetrag ein: (in Euro)")
         self.button1.config(text="EUR")
@@ -51,6 +55,7 @@ class Currency:
         self.button1.config(text="EUR")
         self.button2.config(text="USD")
         self.button3.config(text="GBP")
+
 if __name__ == "__main__":
     root = tk.Tk()
     gui = Currency(root)
